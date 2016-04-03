@@ -8,6 +8,7 @@ public class MainActivity  extends AppCompatActivity {
 
     private LegacyNotifications legacyNotifications;
     private InlineReply inlineReply;
+    private BundledNotifictions bundledNotifictions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +18,7 @@ public class MainActivity  extends AppCompatActivity {
         BaseNotificationHelper notificationHelper = new BaseNotificationHelper(this);
         legacyNotifications = new LegacyNotifications(notificationHelper);
         inlineReply = new InlineReply(notificationHelper);
+        bundledNotifictions = new BundledNotifictions(notificationHelper);
 
         inlineReply.handleInlineReply(getIntent());
     }
@@ -42,6 +44,7 @@ public class MainActivity  extends AppCompatActivity {
     }
 
     public void onBundledButtonClick(View view) {
+        bundledNotifictions.addNotificationToBundle();
     }
 
 

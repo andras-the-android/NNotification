@@ -40,8 +40,8 @@ public class BaseNotificationHelper {
         //alternative configuration way
         PendingIntent resultPendingIntent = getPendingIntent();
         mBuilder.setContentIntent(resultPendingIntent);
-        mBuilder.addAction(R.drawable.ic_launcher, "First action", resultPendingIntent);
-        mBuilder.addAction(R.drawable.ic_launcher, "Second action", resultPendingIntent);
+//        mBuilder.addAction(R.drawable.ic_launcher, "First action", resultPendingIntent);
+//        mBuilder.addAction(R.drawable.ic_launcher, "Second action", resultPendingIntent);
         return mBuilder;
     }
 
