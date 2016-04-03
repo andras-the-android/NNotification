@@ -40,4 +40,10 @@
         android:layout_height="wrap_content"
         android:text="Inline reply"
         android:onClick="onInlineReplyButtonClick"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bundled"
+        android:onClick="onBundledButtonClick"/>
 </LinearLayout>
