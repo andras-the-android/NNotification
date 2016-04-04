@@ -9,6 +9,7 @@ public class MainActivity  extends AppCompatActivity {
     private LegacyNotifications legacyNotifications;
     private InlineReply inlineReply;
     private BundledNotifictions bundledNotifictions;
+    private CustomViewNotifications customViewNotifications;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +20,7 @@ public class MainActivity  extends AppCompatActivity {
         legacyNotifications = new LegacyNotifications(notificationHelper);
         inlineReply = new InlineReply(notificationHelper);
         bundledNotifictions = new BundledNotifictions(notificationHelper);
+        customViewNotifications = new CustomViewNotifications(notificationHelper);
 
         inlineReply.handleInlineReply(getIntent());
     }
@@ -47,7 +49,7 @@ public class MainActivity  extends AppCompatActivity {
         bundledNotifictions.addNotificationToBundle();
     }
 
-
-
-
+    public void onCustomViewButtonClick(View view) {
+        customViewNotifications.show();
+    }
 }

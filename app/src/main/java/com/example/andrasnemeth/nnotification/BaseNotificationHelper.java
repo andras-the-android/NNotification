@@ -1,5 +1,6 @@
 package com.example.andrasnemeth.nnotification;
 
+import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -45,8 +46,16 @@ public class BaseNotificationHelper {
     }
 
     public void showNotification(NotificationCompat.Builder builder, int id) {
+        showNotification(builder.build(), id);
+    }
+
+    public void showNotification(Notification.Builder builder, int id) {
+        showNotification(builder.build(), id);
+    }
+
+    private void showNotification(Notification notification, int id) {
         NotificationManager mNotificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        mNotificationManager.notify(id, builder.build());
+        mNotificationManager.notify(id, notification);
     }
 
     public Bitmap getBitmap() {
