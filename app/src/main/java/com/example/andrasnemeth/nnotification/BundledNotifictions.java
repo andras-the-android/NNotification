@@ -24,14 +24,15 @@ public class BundledNotifictions {
             addGroupSummaryNotification();
         }
         notificationBuilder.setGroup(KEY_NOTIFICATION_GROUP);
-        notificationHelper.showNotification(notificationBuilder, notificationCounter);
+        notificationHelper.showNotification(notificationBuilder, NOTIFICATION_ID_GROUP_SUMMARY + notificationCounter);
         ++notificationCounter;
     }
 
     public void addGroupSummaryNotification() {
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(notificationHelper.getContext())
                 .setSmallIcon(R.drawable.ic_launcher)
-                .setContentTitle("This is the title of the group")
+                .setStyle(new NotificationCompat.BigTextStyle()
+                        .setSummaryText("This is the title of the group"))
                 .setGroupSummary(true)
                 .setGroup(KEY_NOTIFICATION_GROUP);
         notificationHelper.showNotification(notificationBuilder, NOTIFICATION_ID_GROUP_SUMMARY);

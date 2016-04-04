@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.v4.app.NotificationCompat;
+import android.support.v4.content.ContextCompat;
 
 /**
  * Created by guni8 on 2016. 04. 03..
@@ -25,23 +26,16 @@ public class BaseNotificationHelper {
 
         NotificationCompat.Builder mBuilder =
                 new NotificationCompat.Builder(context)
-                        //Manadatory items
-                        //------
                         .setSmallIcon(R.drawable.ic_launcher)
                         .setContentTitle("Content title")
                         .setContentText("Content text")
-                        //------
                         .setLargeIcon(bitmap)
-                        //dismiss notification atrer the user tapped on it
                         .setAutoCancel(true)
-                //this generates an indeterminate progress bar
-                //.setProgress(0, 0, true)
-                ;
-        //alternative configuration way
+                        .setColor(ContextCompat.getColor(context, R.color.colorPrimary));
         PendingIntent resultPendingIntent = getPendingIntent();
         mBuilder.setContentIntent(resultPendingIntent);
-//        mBuilder.addAction(R.drawable.ic_launcher, "First action", resultPendingIntent);
-//        mBuilder.addAction(R.drawable.ic_launcher, "Second action", resultPendingIntent);
+        mBuilder.addAction(R.drawable.ic_launcher, "First action", resultPendingIntent);
+        mBuilder.addAction(R.drawable.ic_launcher, "Second action", resultPendingIntent);
         return mBuilder;
     }
 
