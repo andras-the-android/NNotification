@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">NNotification</string>
+    <string name="notification_on">NNotification on</string>
+    <string name="notification_off">NNotification off</string>
 </resources>
