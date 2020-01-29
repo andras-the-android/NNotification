@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val notificationHelper = BaseNotificationHelper(this)
+        notificationHelper.createNotificationChannel()
         legacyNotifications = LegacyNotifications(notificationHelper)
         inlineReply = InlineReply(notificationHelper)
         bundledNotifictions = BundledNotifictions(notificationHelper)

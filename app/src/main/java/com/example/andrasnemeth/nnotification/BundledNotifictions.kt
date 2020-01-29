@@ -18,13 +18,13 @@ class BundledNotifictions(private val notificationHelper: BaseNotificationHelper
     }
 
     fun addGroupSummaryNotification() {
-        val notificationBuilder = NotificationCompat.Builder(notificationHelper.context)
+        val builder = notificationHelper.createNotificationBuilder()
                 .setSmallIcon(R.drawable.ic_launcher)
                 .setStyle(NotificationCompat.BigTextStyle()
                         .setSummaryText("This is the title of the group"))
                 .setGroupSummary(true)
                 .setGroup(KEY_NOTIFICATION_GROUP)
-        notificationHelper.showNotification(notificationBuilder, NOTIFICATION_ID_GROUP_SUMMARY)
+        notificationHelper.showNotification(builder, NOTIFICATION_ID_GROUP_SUMMARY)
     }
 
     companion object {

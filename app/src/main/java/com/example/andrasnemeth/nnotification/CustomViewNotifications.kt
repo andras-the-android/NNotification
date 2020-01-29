@@ -1,7 +1,7 @@
 package com.example.andrasnemeth.nnotification
 
-import android.app.Notification
 import android.widget.RemoteViews
+import androidx.core.app.NotificationCompat
 
 /**
  * Created by guni8 on 2016. 04. 04..
@@ -13,12 +13,12 @@ class CustomViewNotifications(private val notificationHelper: BaseNotificationHe
         val remoteViewsBig = RemoteViews(notificationHelper.context.packageName, R.layout.notification_big_custom)
         remoteViewsBig.setTextViewText(R.id.content_title, "This is the title of the big custom view notification")
         remoteViewsBig.setTextViewText(R.id.content_text, "This is the text of the big custom view notification")
-        val builder = Notification.Builder(notificationHelper.context)
+        val builder = notificationHelper.createNotificationBuilder()
                 .setSmallIcon(R.drawable.ic_launcher)
                 .setAutoCancel(true)
                 .setCustomContentView(remoteViews)
                 .setCustomBigContentView(remoteViewsBig)
-                .setStyle(Notification.DecoratedCustomViewStyle())
+                .setStyle(NotificationCompat.DecoratedCustomViewStyle())
         notificationHelper.showNotification(builder, NOTIFICATION_ID_CUSTOM)
     }
 
