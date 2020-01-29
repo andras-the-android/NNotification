@@ -2,8 +2,8 @@ package com.example.andrasnemeth.nnotification;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.support.annotation.NonNull;
-import android.support.v4.app.NotificationCompat;
+import androidx.annotation.NonNull;
+import androidx.core.app.NotificationCompat;
 import android.view.View;
 
 /**

@@ -12,8 +12,8 @@ import com.example.andrasnemeth.nnotification.R;
 public class NNotificationTileService extends TileService {
 
     @Override
-    public int onTileAdded() {
-        return super.onTileAdded();
+    public void onTileAdded() {
+        super.onTileAdded();
     }
 
     @Override

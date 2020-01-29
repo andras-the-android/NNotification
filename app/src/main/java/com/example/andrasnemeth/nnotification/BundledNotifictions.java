@@ -1,6 +1,6 @@
 package com.example.andrasnemeth.nnotification;
 
-import android.support.v4.app.NotificationCompat;
+import androidx.core.app.NotificationCompat;
 
 /**
  * Created by guni8 on 2016. 04. 03..
